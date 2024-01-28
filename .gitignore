@@ -1,0 +1,7 @@
+static
+.env
+env.sh
+*.pyc
+test_env
+.vscode
+media
