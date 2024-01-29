@@ -5,3 +5,7 @@ env.sh
 test_env
 .vscode
 media
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'ksainstrument.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':    os.environ['MUSIC_DATABASE_NAME'],
+        'USER':    os.environ['MUSIC_DATABASE_USER'],
+        'PASSWORD': os.environ['MUSIC_DATABASE_PASS'],
+        'HOST': os.environ['MUSIC_DATABASE_HOST'],
+        'PORT': os.environ['MUSIC_DB_PORT'],
     }
 }
 
